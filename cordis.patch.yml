@@ -1,0 +1,7 @@
+# dsh-notify bundle patch: one Host row.
+#
+# The row carries no `config` key on purpose: this version exports no Config,
+# so the plugin reads its tunables from the constants at the top of index.js.
+- insert:
+    - id: notify
+      name: 'dsh-notify'

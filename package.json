@@ -1,0 +1,34 @@
+{
+  "name": "dsh-notify",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "任务提示音：DSH 需要你确认或一轮结束时播放 Windows 提示音，音效可在设置页里挑选并试听。",
+  "meta": {
+    "title": "任务提示音",
+    "description": "需要确认 / 需要回答时响一声，主会话一轮结束时响另一声；在设置里挑选 Windows 自带音效或自定义 wav，点一下即可试听。"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ]
+}
